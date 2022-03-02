@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { getAllDeals } from './ApiCalls'
+import AllGamesContainer from '../src/Components/AllGamesContainer'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      allGamesData: []
+    }
+  }
+
+render() {
+  return(
+    <div className='home-view'>
+        <h1>GameSeek</h1>
+        <AllGamesContainer />
     </div>
-  );
+    )
+  }
 }
 
 export default App;
