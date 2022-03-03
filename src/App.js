@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { Route, Switch} from 'react-router-dom';
 import { getAllDeals } from './ApiCalls'
-import AllGamesContainer from '../src/Components/AllGamesContainer'
+import HomePage from './Components/HomePage'
+import Navbar from './Components/Navbar'
+import FavoritesList from './Components/FavoritesList'
 import './App.css';
 
 class App extends Component {
@@ -13,10 +16,13 @@ class App extends Component {
 
 render() {
   return(
-    <div className='home-view'>
-        <h1>GameSeek</h1>
-        <AllGamesContainer />
-    </div>
+    <main className='home-view'>
+      <Navbar />
+      <Switch>
+        <Route exact path='/' render={() => <HomePage />}/>
+        <Route exact path='/favorites' render={() => <FavoritesList />}/>
+      </Switch>
+    </main>
     )
   }
 }

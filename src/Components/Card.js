@@ -4,7 +4,7 @@ const Card = () => {
 
   return (
     <div>
-      <h2>Card Component Renders!</h2>
+      <h2>AllCards!</h2>
     </div>
   )
 }

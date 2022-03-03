@@ -2,16 +2,16 @@ import React from 'react'
 import Card from './Card'
 
 
-const AllGamesContainer = () => {
+const HomePage = () => {
 
 
   return (
     <div>
-      <h2>All Games Container Renders!</h2>
+      <h2>HomePage</h2>
       <Card />
     </div>
   )
 }
 
 
-export default AllGamesContainer
+export default HomePage
