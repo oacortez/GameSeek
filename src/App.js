@@ -14,12 +14,17 @@ class App extends Component {
     }
   }
 
-render() {
+  componentDidMount = () => {
+    getAllDeals()
+    .then(data => this.setState({allGamesData: data}))
+  }
+  
+  render() {
   return(
     <main className='home-view'>
       <Navbar />
       <Switch>
-        <Route exact path='/' render={() => <HomePage />}/>
+        <Route exact path='/' render={() => <HomePage allGames={this.state.allGamesData}/>}/>
         <Route exact path='/favorites' render={() => <FavoritesList />}/>
       </Switch>
     </main>

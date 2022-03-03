@@ -2,8 +2,7 @@ import React from 'react'
 import Card from './Card'
 
 
-const HomePage = () => {
-
+const HomePage = ({ allGames }) => {
 
   return (
     <div>
