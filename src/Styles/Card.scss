@@ -1,0 +1,49 @@
+@import './_variables';
+@import './_mixins';
+
+.card {
+  overflow: hidden;
+  box-shadow: 0, 2px, 20px $black;
+  border-radius: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 200ms ease-in;
+  border: 2px solid green;
+  height: 100%;
+  background-color: $white;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-image {
+  height: 12rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-title {
+  padding: 1rem;
+  align-items: center;
+  font-weight: 600;
+}
+
+.card-price,
+.card-rating {
+  padding: 0.5rem 1rem;
+}
+
+.add-favorites-btn {
+  padding: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 1rem;
+  background-color: $light-red;
+  color: $white;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  border: none;
+}
