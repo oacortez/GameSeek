@@ -4,7 +4,7 @@ import { getAllDeals } from './ApiCalls'
 import HomePage from './Components/HomePage'
 import Navbar from './Components/Navbar'
 import FavoritesList from './Components/FavoritesList'
-import './App.css';
+import './Styles/App.scss';
 
 class App extends Component {
   constructor() {
