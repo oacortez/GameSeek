@@ -3,19 +3,20 @@ import Card from './Card'
 import '../Styles/HomePage.scss'
 
 
-const HomePage = ({ allGames }) => {
+const HomePage = ({ allGames, favorite}) => {
 
   console.log(allGames);
 
-  const allGameCards = allGames.map((game, index) => {
+  const allGameCards = allGames.map((game) => {
     return (
       <Card 
-        id={index + 1}
-        key={index + 1}
+        id={game.dealID}
+        key={game.dealID}
         image={game.thumb}
         title={game.title}
         salePrice={game.salePrice}
         dealRating={game.dealRating}
+        favorite={favorite}
       />
     )
   })
