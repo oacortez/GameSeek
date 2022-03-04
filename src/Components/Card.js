@@ -1,7 +1,6 @@
 import React from 'react'
 
-const Card = ({id, image, title, salePrice, dealRating, }) => {
-
+const Card = ({id, image, title, salePrice, dealRating, favorite}) => {
   return (
     <div className='card'>
       <div className='card-body'>
@@ -11,7 +10,7 @@ const Card = ({id, image, title, salePrice, dealRating, }) => {
         <p className='card-rating'>Deal Rating: {dealRating}/10</p>
       </div>
       
-      <button className='add-favorites-btn'>Add to my favorites</button>
+      <button className='add-favorites-btn' onClick={() => favorite(id)}>Add to my favorites</button>
     </div>
   )
 }
