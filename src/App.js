@@ -25,6 +25,15 @@ class App extends Component {
     this.setState({favoriteLists: [...this.state.favoriteLists, userFavorite]})
   }
 
+  // ** NOTE: WHEN I CLICK ON 'ADD TO MY FAVORITES' THE CARD STILL DISPLAYS IN HOMEPAGE 
+  // CARD IS ABLE TO DISPLAY ON FAVORITES PAGE AND AS WELL REMOVE FROM PAGE 
+
+  // GOAL: GET THE CARD TO DISSAPER IN HOME PAGE WHEN USER CLICKS 'ADD TO MY FAVORITES'
+  // AND IS ABLE TO BE CONSISTENT 
+  
+  // OR BE ABLE TO CREATE A TOGGLE FUNCTION TO LET THE USER KNOW THEY ALREADY HAVE THAT CARD
+  // ON THEIR LIST.
+
   removeFromFavorites = (id) => {
     const filterFavorites = this.state.favoriteLists.filter(game => game.dealID !== id)
     this.setState({favoriteLists: filterFavorites})
