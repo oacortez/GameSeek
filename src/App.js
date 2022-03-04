@@ -10,7 +10,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      allGamesData: []
+      allGamesData: [],
+      favoriteLists: [],
     }
   }
 
@@ -18,14 +19,24 @@ class App extends Component {
     getAllDeals()
     .then(data => this.setState({allGamesData: data}))
   }
+
+  addToFavorites = (id) => {
+    const userFavorite = this.state.allGamesData.find(game => game.dealID === id)
+    this.setState({favoriteLists: [...this.state.favoriteLists, userFavorite]})
+  }
+
+  removeFromFavorites = (id) => {
+    const filterFavorites = this.state.favoriteLists.filter(game => game.dealID !== id)
+    this.setState({favoriteLists: filterFavorites})
+  }
   
   render() {
   return(
     <main className='home-view'>
       <Navbar />
       <Switch>
-        <Route exact path='/' render={() => <HomePage allGames={this.state.allGamesData}/>}/>
-        <Route exact path='/favorites' render={() => <FavoritesList />}/>
+        <Route exact path='/' render={() => <HomePage allGames={this.state.allGamesData} favorite={this.addToFavorites}/>}/>
+        <Route exact path='/favorites' render={() => <FavoritesList favoriteGames={this.state.favoriteLists} removeFavorite={this.removeFromFavorites}/>}/>
       </Switch>
     </main>
     )
