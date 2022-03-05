@@ -11,25 +11,28 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      allGamesData: [],
-      favoriteLists: [],
+      allGames: [],
+      favorites: [],
     }
   }
 
   componentDidMount = () => {
     getAllDeals()
-    .then(data => this.setState({...this.state, allGamesData: [...this.state.allGamesData, ...data]}))
+    .then(data => this.setState({...this.state, allGames: [...this.state.allGames, ...data]}))
   }
 
   addToFavorites = (id) => {
-    const userFavorite = this.state.allGamesData.find(game => game.dealID === id)
+    const userFavorite = this.state.allGames.find(game => game.dealID === id)
 
-    if(!this.state.favoriteLists.includes(userFavorite)) {
-    this.setState({favoriteLists: [...this.state.favoriteLists, userFavorite]})
-    } else {
+    if(userFavorite.isFavorited) {
       this.setState({...this.state})
+    } else {
+      userFavorite.isFavorited = true
+      this.setState({favorites: [...this.state.favorites, userFavorite]})
     }
   }
+
+  
 
   // ** NOTE: WHEN I CLICK ON 'ADD TO MY FAVORITES' THE CARD STILL DISPLAYS IN HOMEPAGE 
   // CARD IS ABLE TO DISPLAY ON FAVORITES PAGE AND AS WELL REMOVE FROM PAGE 
@@ -41,8 +44,8 @@ class App extends Component {
   // ON THEIR LIST.
 
   removeFromFavorites = (id) => {
-    const filterFavorites = this.state.favoriteLists.filter(game => game.dealID !== id)
-    this.setState({favoriteLists: filterFavorites})
+    const filterFavorites = this.state.favorites.filter(game => game.dealID !== id)
+    this.setState({favorites: filterFavorites})
   }
   
   render() {
@@ -50,8 +53,8 @@ class App extends Component {
     <main className='home-view'>
       <Navbar />
       <Switch>
-        <Route exact path='/' render={() => <HomePage allGames={this.state.allGamesData} favorite={this.addToFavorites} removeFavorite={this.removeFromFavorites}/>}/>
-        <Route exact path='/favorites' render={() => <FavoritesList favoriteGames={this.state.favoriteLists} removeFavorite={this.removeFromFavorites}/>}/>
+        <Route exact path='/' render={() => <HomePage allGames={this.state.allGames} favorite={this.addToFavorites} removeFavorite={this.removeFromFavorites}/>}/>
+        <Route exact path='/favorites' render={() => <FavoritesList favoriteGames={this.state.favorites} removeFavorite={this.removeFromFavorites}/>}/>
       </Switch>
     </main>
     )

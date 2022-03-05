@@ -4,9 +4,21 @@ class Card extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isFavorited: true,
+      isFavorited: false,
     }
+    const {game, favorite, unfavorite} = props
+    console.log(game);
   }
+
+  // id={game.dealID}
+  // key={game.dealID}
+  // image={game.thumb}
+  // title={game.title}
+  // salePrice={game.salePrice}
+  // dealRating={game.dealRating}
+  // favorites={favorite}
+  // removeFavorite={removeFavorite}
+
 
   // handleClick = () => {
   //   const favorite = this.state.isFavorited
@@ -30,7 +42,7 @@ class Card extends Component {
           <p className='card-price'>Sale Price: ${this.props.salePrice}</p>
           <p className='card-rating'>Deal Rating: {this.props.dealRating}/10</p>
         </div>
-        <button className='add-favorites-btn' onClick={() => this.props.favorites(this.props.id)}> Add to favorites </button>
+        <button className='add-favorites-btn' onClick={() => fav(this.props.id)}> Add to favorites </button>
       </div>
     )
   }

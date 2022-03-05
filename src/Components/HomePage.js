@@ -5,19 +5,16 @@ import '../Styles/HomePage.scss'
 
 const HomePage = ({ allGames, favorite, removeFavorite}) => {
 
-  console.log(allGames);
+  // console.log(allGames);
 
   const allGameCards = allGames.map((game) => {
+    // console.log(game);
     return (
       <Card 
-        id={game.dealID}
-        key={game.dealID}
-        image={game.thumb}
-        title={game.title}
-        salePrice={game.salePrice}
-        dealRating={game.dealRating}
-        favorites={favorite}
-        removeFavorite={removeFavorite}
+        key={game.dealId}
+        game={game}
+        favorite={favorite}
+        unfavorite={removeFavorite}
       />
     )
   })
