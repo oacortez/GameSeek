@@ -3,7 +3,7 @@ import Card from './Card'
 import '../Styles/HomePage.scss'
 
 
-const HomePage = ({ allGames, favorite}) => {
+const HomePage = ({ allGames, favorite, removeFavorite}) => {
 
   console.log(allGames);
 
@@ -16,7 +16,8 @@ const HomePage = ({ allGames, favorite}) => {
         title={game.title}
         salePrice={game.salePrice}
         dealRating={game.dealRating}
-        favorite={favorite}
+        favorites={favorite}
+        removeFavorite={removeFavorite}
       />
     )
   })

@@ -1,7 +1,6 @@
 import React from 'react'
 
 const FavoritesList = ({ favoriteGames,  removeFavorite}) => {
-  console.log(favoriteGames);
 
   const userFavoriteGames = favoriteGames.map(gameInfo => {
     return ( 
