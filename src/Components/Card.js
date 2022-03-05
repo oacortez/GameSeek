@@ -1,14 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react';
+import '../Styles/Card.scss'
+import FavoriteButton from './FavoriteButton';
 
-class Card extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isFavorited: false,
-    }
-    const {game, favorite, unfavorite} = props
-    console.log(game);
-  }
+const Card = ({game, favorite, unfavorite}) =>  {
+// console.log(game);
 
   // id={game.dealID}
   // key={game.dealID}
@@ -33,20 +28,19 @@ class Card extends Component {
     // This method is able to favorite and un favorite but text doesnt toggle when I click on it (its a bug)
   // }
 
-  render() {
     return (
       <div className='card'>
         <div className='card-body'>
-          <img src={this.props.image} className='card-image'/>
-          <h2 className='card-title'>{this.props.title}</h2>
-          <p className='card-price'>Sale Price: ${this.props.salePrice}</p>
-          <p className='card-rating'>Deal Rating: {this.props.dealRating}/10</p>
+          <img src={game.image} className='card-image'/>
+          <h2 className='card-title'>{game.title}</h2>
+          <p className='card-price'>Sale Price: ${game.salePrice}</p>
+          <p className='card-rating'>Deal Rating: {game.dealRating}/10</p>
         </div>
-        <button className='add-favorites-btn' onClick={() => fav(this.props.id)}> Add to favorites </button>
+
+      <FavoriteButton favorite={favorite} unfavorite={unfavorite} isFavorited={game.isFavorited} dealId={game.dealId}/>
       </div>
     )
   }
-}
 
 export default Card
 

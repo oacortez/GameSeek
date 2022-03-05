@@ -5,10 +5,7 @@ import '../Styles/HomePage.scss'
 
 const HomePage = ({ allGames, favorite, removeFavorite}) => {
 
-  // console.log(allGames);
-
   const allGameCards = allGames.map((game) => {
-    // console.log(game);
     return (
       <Card 
         key={game.dealId}
