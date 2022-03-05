@@ -7,10 +7,10 @@ import '../Styles/Navbar.scss'
 const Navbar = () => {
   return (
     <nav>
-      <NavLink to='/' className='home-link'>
+      <NavLink to={'/'} className='home-link'>
         <button className='title'>GameSeek<GiEyeTarget /></button>
       </NavLink>
-      <NavLink to='/favorites' className='favorites-link'>
+      <NavLink to={'/favorites'} className='favorites-link'>
         <button className='favorites-view-btn'>Favorites <FaHeart style={{'color': 'red'}}/></button>
       </NavLink>
     </nav>
