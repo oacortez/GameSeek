@@ -1,4 +1,4 @@
-describe('Poem selection page spec', () => {
+describe('User flow functionality', () => {
   beforeEach(() => {
       cy.intercept('GET', 'https://www.cheapshark.com/api/1.0/deals', {
       statusCode: 200,

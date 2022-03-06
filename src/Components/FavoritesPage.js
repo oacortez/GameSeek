@@ -19,7 +19,7 @@ const FavoritesPage = ({ allGames, unfavoriteGame, favoriteGame, favoritesTally}
   
   return (
     <div>
-      { favoritesTally === 0 ? <h2 className='no-favorites-msg'>You dont have any games favorited</h2> : <h1 className='favorites-list-title'> My favorites List </h1>}
+      { favoritesTally === 0 ? <h2 className='no-favorites-msg'>You dont have any games favorited</h2> : <h1 className='favorites-list-title'> My Favorites List </h1>}
       <div className='wrapper'>
       {favoriteCards}
        </div>
