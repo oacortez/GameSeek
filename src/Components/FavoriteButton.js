@@ -6,12 +6,13 @@ const FavoriteButton = ({favorite, isFavorited, unfavorite, dealId}) => {
     event.preventDefault();
     if(isFavorited) {
       unfavorite(dealId)
+    } else {
+      favorite(dealId)
     }
-    favorite(dealId)
   }
 
   return (
-   <button className='add-favorites-btn' onClick={handleClick}>
+   <button className={isFavorited ? 'remove-favorites-btn' : 'add-favorites-btn' } onClick={handleClick}>
      {isFavorited ? 'Unfavorite Game' : 'Favorite Game'}
    </button>
   )
