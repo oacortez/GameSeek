@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: space-between;
   transition: transform 200ms ease-in;
-  border: 2px solid green;
+  border: 3px solid ;
   height: 100%;
   background-color: $white;
 }
@@ -19,7 +19,7 @@
 }
 
 .card-image {
-  height: 12rem;
+  height: 10rem;
   width: 100%;
   object-fit: cover;
 }
@@ -35,7 +35,7 @@
   padding: 0.5rem 1rem;
 }
 
-.add-favorites-btn {
+.remove-favorites-btn {
   padding: 1rem;
   font-family: inherit;
   font-weight: bold;
@@ -46,4 +46,32 @@
   border-radius: 0.2rem;
   cursor: pointer;
   border: none;
+}
+
+.add-favorites-btn {
+  padding: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 1rem;
+  background-color: black;
+  color: $white;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  border: none;
+}
+
+
+.buy-btn {
+  padding: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 1rem;
+  background-color: #000;
+  color: $white;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  border: none;
+  text-align: center;
 }

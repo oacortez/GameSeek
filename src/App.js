@@ -1,48 +1,43 @@
 import React, { Component } from 'react';
-import { Route, Switch} from 'react-router-dom';
-import { getAllDeals } from './ApiCalls'
-import HomePage from './Components/HomePage'
-import Navbar from './Components/Navbar'
-import FavoritesList from './Components/FavoritesList'
+import { Route, Switch } from 'react-router-dom';
+import { getAllDeals } from './ApiCalls';
+import FavoritesPage from './Components/FavoritesPage';
+import HomePage from './Components/HomePage';
+import Navbar from './Components/Navbar';
 import './Styles/App.scss';
-import { FaIgloo } from 'react-icons/fa';
+import {findGame} from '../src/utils/findGame'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      allGamesData: [],
-      favoriteLists: [],
+      allGames: []
     }
   }
 
   componentDidMount = () => {
-    getAllDeals()
-    .then(data => this.setState({...this.state, allGamesData: [...this.state.allGamesData, ...data]}))
-  }
-
-  addToFavorites = (id) => {
-    const userFavorite = this.state.allGamesData.find(game => game.dealID === id)
-
-    if(!this.state.favoriteLists.includes(userFavorite)) {
-    this.setState({favoriteLists: [...this.state.favoriteLists, userFavorite]})
-    } else {
-      this.setState({...this.state})
+    if(!this.state.allGames.length) {
+      getAllDeals()
+        .then(data => this.setState({...this.state, allGames: [...this.state.allGames, ...data]}))
     }
   }
 
-  // ** NOTE: WHEN I CLICK ON 'ADD TO MY FAVORITES' THE CARD STILL DISPLAYS IN HOMEPAGE 
-  // CARD IS ABLE TO DISPLAY ON FAVORITES PAGE AND AS WELL REMOVE FROM PAGE 
+  favoriteGame = (id) => {
+    const selectedGame = findGame(id, this.state.allGames)
+    
+    if(!selectedGame.isFavorited) {
+      selectedGame.isFavorited = true
+      this.setState({allGames: this.state.allGames})
+    }
+  }
 
-  // GOAL: GET THE CARD TO DISSAPER IN HOME PAGE WHEN USER CLICKS 'ADD TO MY FAVORITES'
-  // AND IS ABLE TO BE CONSISTENT 
+  unfavoriteGame = (id) => {
+    const selectedGame = findGame(id, this.state.allGames)
 
-  // OR BE ABLE TO CREATE A TOGGLE FUNCTION TO LET THE USER KNOW THEY ALREADY HAVE THAT CARD
-  // ON THEIR LIST.
-
-  removeFromFavorites = (id) => {
-    const filterFavorites = this.state.favoriteLists.filter(game => game.dealID !== id)
-    this.setState({favoriteLists: filterFavorites})
+    if(selectedGame.isFavorited) {
+      selectedGame.isFavorited = false
+      this.setState({allGames: this.state.allGames})
+    }
   }
   
   render() {
@@ -50,8 +45,8 @@ class App extends Component {
     <main className='home-view'>
       <Navbar />
       <Switch>
-        <Route exact path='/' render={() => <HomePage allGames={this.state.allGamesData} favorite={this.addToFavorites} removeFavorite={this.removeFromFavorites}/>}/>
-        <Route exact path='/favorites' render={() => <FavoritesList favoriteGames={this.state.favoriteLists} removeFavorite={this.removeFromFavorites}/>}/>
+        <Route exact path='/' render={() => <HomePage allGames={this.state.allGames} favoriteGame={this.favoriteGame} unfavoriteGame={this.unfavoriteGame}/>}/>
+        <Route exact path='/favorites' render={() => <FavoritesPage allGames={this.state.allGames} favoriteGame={this.favoriteGame} unfavoriteGame={this.unfavoriteGame}/>}/>
       </Switch>
     </main>
     )

@@ -3,30 +3,26 @@ import Card from './Card'
 import '../Styles/HomePage.scss'
 
 
-const HomePage = ({ allGames, favorite, removeFavorite}) => {
+const HomePage = ({ allGames, favoriteGame, unfavoriteGame}) => {
 
-  console.log(allGames);
-
-  const allGameCards = allGames.map((game) => {
-    return (
-      <Card 
-        id={game.dealID}
-        key={game.dealID}
-        image={game.thumb}
-        title={game.title}
-        salePrice={game.salePrice}
-        dealRating={game.dealRating}
-        favorites={favorite}
-        removeFavorite={removeFavorite}
-      />
-    )
+  const unfavoriteGames = allGames.map((game) => {
+    if(!game.isFavorited) {
+      return (
+        <Card 
+        key={`h-${game.dealId}`}
+          game={game}
+          favorite={favoriteGame}
+          unfavorite={unfavoriteGame}
+        />
+      )
+    }
   })
 
   return (
     <div >
       <h2 className='home-view-title'>All Deal games</h2>
     <div className='wrapper'>
-      {allGameCards}
+      {unfavoriteGames}
     </div>
     </div>
   )
