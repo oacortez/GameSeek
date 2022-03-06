@@ -1,6 +1,10 @@
 describe('GameSeek main page load', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000');
+    cy.intercept('GET', 'https://www.cheapshark.com/api/1.0/deals', {
+    statusCode: 200,
+    fixture: 'cardInfo.json'
+    });
+    cy.visit('http://localhost:3000/')
   });
 
   it('Should contain Navbar content', () => {
