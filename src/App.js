@@ -5,46 +5,39 @@ import FavoritesPage from './Components/FavoritesPage';
 import HomePage from './Components/HomePage';
 import Navbar from './Components/Navbar';
 import './Styles/App.scss';
+import {findGame} from '../src/utils/findGame'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      allGames: [],
-      favoriteGames: [],
+      allGames: []
     }
   }
 
   componentDidMount = () => {
-    getAllDeals()
-    .then(data => this.setState({...this.state, allGames: [...this.state.allGames, ...data]}))
-  }
-
-  addToFavoritesGames = (id) => {
-    const userFavorite = this.state.allGames.find(game => game.dealId === id)
-
-    if(!userFavorite.isFavorited) {
-      userFavorite.isFavorited = true
-      this.setState({favoriteGames: [...this.state.favoriteGames, userFavorite]})
+    if(!this.state.allGames.length) {
+      getAllDeals()
+        .then(data => this.setState({...this.state, allGames: [...this.state.allGames, ...data]}))
     }
   }
-  
 
-  // ** NOTE: WHEN I CLICK ON 'ADD TO MY favoriteGames' THE CARD STILL DISPLAYS IN HOMEPAGE 
-  // CARD IS ABLE TO DISPLAY ON favoriteGames PAGE AND AS WELL REMOVE FROM PAGE 
+  favoriteGame = (id) => {
+    const selectedGame = findGame(id, this.state.allGames)
+    
+    if(!selectedGame.isFavorited) {
+      selectedGame.isFavorited = true
+      this.setState({allGames: this.state.allGames})
+    }
+  }
 
-  // GOAL: GET THE CARD TO DISSAPER IN HOME PAGE WHEN USER CLICKS 'ADD TO MY favoriteGames'
-  // AND IS ABLE TO BE CONSISTENT 
+  unfavoriteGame = (id) => {
+    const selectedGame = findGame(id, this.state.allGames)
 
-  // OR BE ABLE TO CREATE A TOGGLE FUNCTION TO LET THE USER KNOW THEY ALREADY HAVE THAT CARD
-  // ON THEIR LIST.
-
-  removeFromFavoriteGames = (id) => {
-    const status = this.state.allGames.find(game => game.dealId === id)
-    status.isFavorited = false
-
-    const filterfavoriteGames = this.state.favoriteGames.filter(game => game.dealId !== id)
-    this.setState({favoriteGames: filterfavoriteGames})
+    if(selectedGame.isFavorited) {
+      selectedGame.isFavorited = false
+      this.setState({allGames: this.state.allGames})
+    }
   }
   
   render() {
@@ -52,8 +45,8 @@ class App extends Component {
     <main className='home-view'>
       <Navbar />
       <Switch>
-        <Route exact path='/' render={() => <HomePage allGames={this.state.allGames} favorite={this.addToFavoritesGames} removeFavorite={this.removeFromFavoriteGames}/>}/>
-        <Route exact path='/favorites' render={() => <FavoritesPage allGames={this.state.allGames} favoriteGames={this.state.favoriteGames} favorite={this.addToFavoritesGames} removeFavorite={this.removeFromFavoriteGames}/>}/>
+        <Route exact path='/' render={() => <HomePage allGames={this.state.allGames} favoriteGame={this.favoriteGame} unfavoriteGame={this.unfavoriteGame}/>}/>
+        <Route exact path='/favorites' render={() => <FavoritesPage allGames={this.state.allGames} favoriteGame={this.favoriteGame} unfavoriteGame={this.unfavoriteGame}/>}/>
       </Switch>
     </main>
     )
