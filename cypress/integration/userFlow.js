@@ -22,7 +22,6 @@ describe('User flow functionality', () => {
       .contains('Favorite Game')
     });
 
-
     it('Should be able to favorite a deal card', () => {
       cy.get(':nth-child(1) > .add-favorites-btn').click()
     });
