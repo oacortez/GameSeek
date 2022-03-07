@@ -37,43 +37,37 @@ GameSeek is a discount gaming pc store app created to a make everyday gamers or 
 
 As a user I am able to view all game deals
 
-![Add-members-to-league](https://media.giphy.com/media/0f3e04b5Ub1XkQqtge/giphy.gif)
+![Main-page-view](https://media.giphy.com/media/0f3e04b5Ub1XkQqtge/giphy.gif)
 
-**Remove a member from the league:**
+**Favorite and unfavorite user cards:**
 
-As a user I am able select members to view more information or to remove them from the league
+As a user I am able to favorite and unfavorite an item that I choose
 
-![Remove-a-member-from-the-league](https://user-images.githubusercontent.com/42048868/156076200-80132900-1966-4044-ab18-aeb524ad28f2.gif)
+![Favorite-unfavorite-deals](https://media.giphy.com/media/3q14xy4OYSZWcFHl2z/giphy.gif)
 
-**Search for courses:**
+**Buy game**
 
-As a user I can search for a course by name.
+As a user I should be able to buy item. When buying item it will redirect me to the online store that carries that game deal
 
-![Search-for-courses](https://user-images.githubusercontent.com/42048868/156077249-cad3da22-f3cd-4d44-b08a-95268d912857.gif)
+![Buy-game](https://media.giphy.com/media/snw4TWqiWlqWXn1eRC/giphy.gif)
 
-**Start a round:**
+**Favorites page view**
 
-As a user I can select a course, a layout, players and start a round.
+As a user I am able to view all my favorite game deals I saved
 
-![Start-a-round](https://user-images.githubusercontent.com/42048868/156077552-2af847ae-890e-47bf-a761-06782bfc5749.gif)
+![Favorites-page-view](https://media.giphy.com/media/m0uzhEIzlJQyiad52M/giphy.gif)
 
-**Complete a round:**
+**Error handling**
 
-As a user I can track each players scores throughout a round and am shown a final score for each player upon finishing.
+If an error occurs as a user I am notified with a message, upon pressing 'Okay' I am taken to the home page.
 
-![Complete-a-round](https://user-images.githubusercontent.com/42048868/156077975-4be20e77-17f4-4bb3-9dd3-19c4a1eaa899.gif)
+![error-handling](https://media.giphy.com/media/0Bc93ED0hc2NdZMSUv/giphy.gif)
 
-**End a round early:**
+**Mobile view:**
 
-As a user I am able to end a round early and shown scores for holes played.
+As a user I am able view this application on a mobile phone
 
-![End-a-round-early](https://user-images.githubusercontent.com/42048868/156078521-a40403c3-4357-41d7-adce-ff057fe06dda.gif)
-
-**Error handling:**
-
-If an error occurs as a user I am notified with a modal, upon pressing 'Okay' I am taken to the home page.
-
-![Error-handling](https://user-images.githubusercontent.com/42048868/156081238-d17e6537-b938-488a-9cdd-1024932be224.gif)
+![mobile-view](https://media.giphy.com/media/mGkmte60rrsXygQ4sB/giphy.gif)
 
 
 ## Challenges
