@@ -6,6 +6,7 @@ import HomePage from './Components/HomePage';
 import Navbar from './Components/Navbar';
 import {findGame} from '../src/utils/findGame'
 import Loading from './Components/Loading'
+import ErrorMessage from './Components/ErrorMessage';
 import './Styles/App.scss';
 
 class App extends Component {
@@ -66,9 +67,13 @@ class App extends Component {
       <Switch>
         <Route exact path='/'>
           {this.state.isLoading && <Loading/>}
-          {!this.state.isLoading && <HomePage allGames={this.state.allGames} favoriteGame={this.favoriteGame} unfavoriteGame={this.unfavoriteGame}/>}
+          {this.state.errorMessage && <ErrorMessage message={this.state.errorMessage}/>}
+          {(!this.state.isLoading && !this.state.errorMessage) && <HomePage allGames={this.state.allGames} favoriteGame={this.favoriteGame} unfavoriteGame={this.unfavoriteGame}/>}
           </Route>  
         <Route exact path='/favorites' render={() => <FavoritesPage allGames={this.state.allGames} favoriteGame={this.favoriteGame} unfavoriteGame={this.unfavoriteGame} favoritesTally={this.state.favoritesTally}/>}/>
+        <Route path='*'>
+          <ErrorMessage />
+        </Route>
       </Switch>
     </main>
     )
