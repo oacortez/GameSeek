@@ -11,7 +11,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      allGames: []
+      allGames: [],
+      favoritesTally: 0
     }
   }
 
@@ -27,6 +28,8 @@ class App extends Component {
     
     if(!selectedGame.isFavorited) {
       selectedGame.isFavorited = true
+      this.state.favoritesTally++
+      this.setState({favoritesTally: this.state.favoritesTally})
       this.setState({allGames: this.state.allGames})
     }
   }
@@ -36,6 +39,8 @@ class App extends Component {
 
     if(selectedGame.isFavorited) {
       selectedGame.isFavorited = false
+      this.state.favoritesTally--
+      this.setState({favoritesTally: this.state.favoritesTally})
       this.setState({allGames: this.state.allGames})
     }
   }
@@ -46,7 +51,7 @@ class App extends Component {
       <Navbar />
       <Switch>
         <Route exact path='/' render={() => <HomePage allGames={this.state.allGames} favoriteGame={this.favoriteGame} unfavoriteGame={this.unfavoriteGame}/>}/>
-        <Route exact path='/favorites' render={() => <FavoritesPage allGames={this.state.allGames} favoriteGame={this.favoriteGame} unfavoriteGame={this.unfavoriteGame}/>}/>
+        <Route exact path='/favorites' render={() => <FavoritesPage allGames={this.state.allGames} favoriteGame={this.favoriteGame} unfavoriteGame={this.unfavoriteGame} favoritesTally={this.state.favoritesTally}/>}/>
       </Switch>
     </main>
     )

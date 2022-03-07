@@ -20,7 +20,7 @@ const HomePage = ({ allGames, favoriteGame, unfavoriteGame}) => {
 
   return (
     <div >
-      <h2 className='home-view-title'>All Deal games</h2>
+      <h2 className='home-view-title'>All Deal Games</h2>
     <div className='wrapper'>
       {unfavoriteGames}
     </div>
