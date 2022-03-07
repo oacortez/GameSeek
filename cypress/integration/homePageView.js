@@ -15,7 +15,9 @@ describe('GameSeek main page load', () => {
   });
 
   it('Should display all cards and its content', () => {
-    cy.get('h2')
+    cy.get('.loading-msg')
+      .contains('Please wait ... ⏳')
+    cy.get('.home-view-title')
       .contains('All Deal Games')
     cy.get('.card-title')
       .contains('Naruto to Boruto Shinobi Striker - Deluxe Edition')
