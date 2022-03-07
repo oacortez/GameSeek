@@ -2,8 +2,7 @@ import React from 'react'
 import Card from './Card'
 import '../Styles/HomePage.scss'
 
-
-const HomePage = ({ allGames, favoriteGame, unfavoriteGame, allGamesTally}) => {
+const HomePage = ({ allGames, favoriteGame, unfavoriteGame}) => {
 
   const unfavoriteGames = allGames.map((game) => {
     if(!game.isFavorited) {
@@ -27,6 +26,5 @@ const HomePage = ({ allGames, favoriteGame, unfavoriteGame, allGamesTally}) => {
     </div>
   )
 }
-
 
 export default HomePage

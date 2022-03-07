@@ -42,6 +42,9 @@
   padding: 0.5rem 1rem;
 }
 
+@import './_variables';
+@import './_mixins';
+
 .remove-favorites-btn {
   padding: 1rem;
   font-family: inherit;
