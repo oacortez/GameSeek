@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+# GameSeek
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Deployed Site
 
-## Available Scripts
+View the deployed site [here](https://gameseek2110.herokuapp.com/)!
 
-In the project directory, you can run:
+## Table of Contents   
 
-### `npm start`
+- [Abstract](#abstract)
+- [Project Goals](#project-goals)
+- [Project Specs](#project-specs)
+- [Challenges](#challenges)
+- [Future Iterations](#future-iterations)
+- [api](#api)
+- [Tech Stack](#tech-stack)
+- [Contributors](#contributors)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Abstract
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+GameSeek is a discount gaming pc store app created to a make everyday gamers or casual gamers life much easier. Users are able to find the best pc game deals on the market. Users are able to favorite and unfavorite gaming deals that we have in store as well they are ready to be purchased if the user wishes to buy the game. 
 
-### `npm test`
+## Project Goals
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Gain competency with React 
+- Create a multi-page UX using Router V5
+- Implement Cypress end to end testing
+- Build a functional and class component application
+- Deploy to Heroku
+- Applied SASS package for styling
+- Better understanding on drilling props
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Specs
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Add members to league:**
 
-### `npm run eject`
+As a user I am able to add members to the league
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![Add-members-to-league](https://user-images.githubusercontent.com/42048868/156076667-42b2c576-c643-4e94-9092-9f02e79c4e40.gif)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Remove a member from the league:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+As a user I am able select members to view more information or to remove them from the league
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Remove-a-member-from-the-league](https://user-images.githubusercontent.com/42048868/156076200-80132900-1966-4044-ab18-aeb524ad28f2.gif)
 
-## Learn More
+**Search for courses:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+As a user I can search for a course by name.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Search-for-courses](https://user-images.githubusercontent.com/42048868/156077249-cad3da22-f3cd-4d44-b08a-95268d912857.gif)
 
-### Code Splitting
+**Start a round:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+As a user I can select a course, a layout, players and start a round.
 
-### Analyzing the Bundle Size
+![Start-a-round](https://user-images.githubusercontent.com/42048868/156077552-2af847ae-890e-47bf-a761-06782bfc5749.gif)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Complete a round:**
 
-### Making a Progressive Web App
+As a user I can track each players scores throughout a round and am shown a final score for each player upon finishing.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![Complete-a-round](https://user-images.githubusercontent.com/42048868/156077975-4be20e77-17f4-4bb3-9dd3-19c4a1eaa899.gif)
 
-### Advanced Configuration
+**End a round early:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+As a user I am able to end a round early and shown scores for holes played.
 
-### Deployment
+![End-a-round-early](https://user-images.githubusercontent.com/42048868/156078521-a40403c3-4357-41d7-adce-ff057fe06dda.gif)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**Error handling:**
 
-### `npm run build` fails to minify
+If an error occurs as a user I am notified with a modal, upon pressing 'Okay' I am taken to the home page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Error-handling](https://user-images.githubusercontent.com/42048868/156081238-d17e6537-b938-488a-9cdd-1024932be224.gif)
+
+
+## Challenges
+
+- Able to fetch an API that I have never used before
+- Learning a better undersanding on class components
+- Knowing when to update state and how to drill props to components
+- Creating favorite and unfavorite functionality
+
+## Future Iterations
+
+- Add a login page so that the app can be used for users.
+- Add a search engine
+- Implement a API to fetch all the games, stores data for better display of data
+- Create a sort and other functions to better access game deals or any other information
+
+## api
+https://apidocs.cheapshark.com/#intro
+
+built by CheapShark
+
+## Tech Stack
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+
+![cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)
+
+## Contributors
+
+[Oscar Cortez](https://github.com/oacortez)
