@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { getAllDeals } from './ApiCalls';
+import {findGame} from '../src/utils/findGame'
 import FavoritesPage from './Components/FavoritesPage';
 import HomePage from './Components/HomePage';
 import Navbar from './Components/Navbar';
-import {findGame} from '../src/utils/findGame'
 import Loading from './Components/Loading'
 import ErrorMessage from './Components/ErrorMessage';
 import './Styles/App.scss';
@@ -31,9 +31,9 @@ class App extends Component {
         throw new Error('Something went wrong, Please try again.')
       }
     })
-      .catch(err => {
+    .catch(err => {
         this.setState({errorMessage: err})
-      })
+    })
   }
 
   favoriteGame = (id) => {
@@ -67,8 +67,16 @@ class App extends Component {
           {this.state.isLoading && <Loading/>}
           {this.state.errorMessage && <ErrorMessage message={this.state.errorMessage}/>}
           {(!this.state.isLoading && !this.state.errorMessage) && <HomePage allGames={this.state.allGames} favoriteGame={this.favoriteGame} unfavoriteGame={this.unfavoriteGame}/>}
-          </Route>  
-        <Route exact path='/favorites' render={() => <FavoritesPage allGames={this.state.allGames} favoriteGame={this.favoriteGame} unfavoriteGame={this.unfavoriteGame} favoritesTally={this.state.favoritesTally}/>}/>
+        </Route>  
+        <Route exact path='/favorites' 
+          render={() => 
+            <FavoritesPage 
+            allGames={this.state.allGames} 
+            favoriteGame={this.favoriteGame} 
+            unfavoriteGame={this.unfavoriteGame} 
+            favoritesTally={this.state.favoritesTally}
+          />}
+        />
         <Route path='*'>
           <ErrorMessage />
         </Route>
@@ -79,6 +87,3 @@ class App extends Component {
 }
 
 export default App;
-
- // {errorMessage && <Error/>}
-        // {this.state.isLoading === true && <Loading/>}

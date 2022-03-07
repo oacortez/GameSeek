@@ -3,9 +3,8 @@ import { NavLink } from 'react-router-dom';
 import '../Styles/Card.scss'
 import FavoriteButton from './FavoriteButton';
 
-
 const Card = ({game, favorite, unfavorite}) =>  {
-
+  
     return (
       <div className='card'>
         <div className='card-body'>
