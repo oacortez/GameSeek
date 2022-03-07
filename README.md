@@ -33,11 +33,11 @@ GameSeek is a discount gaming pc store app created to a make everyday gamers or 
 ## Project Specs
 
 
-**Add members to league:**
+**Main page view:**
 
-As a user I am able to add members to the league
+As a user I am able to view all game deals
 
-![Add-members-to-league](https://user-images.githubusercontent.com/42048868/156076667-42b2c576-c643-4e94-9092-9f02e79c4e40.gif)
+![Add-members-to-league](https://media.giphy.com/media/0f3e04b5Ub1XkQqtge/giphy.gif)
 
 **Remove a member from the league:**
 
