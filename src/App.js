@@ -34,8 +34,6 @@ class App extends Component {
       .catch(err => {
         this.setState({errorMessage: err})
       })
-    // if(!this.state.allGames.length) {
-    // }
   }
 
   favoriteGame = (id) => {

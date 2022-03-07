@@ -3,7 +3,7 @@ import Card from './Card'
 import '../Styles/HomePage.scss'
 
 
-const HomePage = ({ allGames, favoriteGame, unfavoriteGame}) => {
+const HomePage = ({ allGames, favoriteGame, unfavoriteGame, allGamesTally}) => {
 
   const unfavoriteGames = allGames.map((game) => {
     if(!game.isFavorited) {
@@ -19,8 +19,8 @@ const HomePage = ({ allGames, favoriteGame, unfavoriteGame}) => {
   })
 
   return (
-    <div >
-      <h2 className='home-view-title'>All Deal Games</h2>
+    <div>
+    <h2 className='home-view-title'>All Deal Games</h2>
     <div className='wrapper'>
       {unfavoriteGames}
     </div>
