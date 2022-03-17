@@ -1,12 +1,26 @@
 name: cypress-test
 on: [push]
-jobs: 
-  run-cypress: 
-    runs-on: ubuntu-20.04 
-    steps: 
-      - name: checkout
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
         uses: actions/checkout@v2
-      - name: cypress run
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          project: ./
+          build: npm run build
+          start: npm start
+# on: [push]
+# jobs: 
+#   run-cypress: 
+#     runs-on: ubuntu-20.04 
+#     steps: 
+#       - name: checkout
+#         uses: actions/checkout@v2
+#       - name: cypress run
+#         uses: cypress-io/github-action@v2
+#         with:
+#           project: ./
