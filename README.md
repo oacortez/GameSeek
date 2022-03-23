@@ -17,7 +17,7 @@ View the deployed site [here](https://gameseek2110.herokuapp.com/)!
 
 ## Abstract
 
-GameSeek is a discount gaming pc store app created to a make everyday gamers or casual gamers life much easier. Users are able to find the best pc game deals on the market. Users are able to favorite and unfavorite gaming deals that we have in store as well they are ready to be purchased if the user wishes to buy the game. 
+GameSeek is a discount gaming pc store app. Built to make everyday gamers or casual gamers life much easier. Users are able to find the best pc game deals on the market. Users are able to favorite and unfavorite gaming deals that we have in store as well they are ready to be purchased if the user wishes to buy the game. 
 
 ## Project Goals
 
