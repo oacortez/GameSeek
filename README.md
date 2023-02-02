@@ -2,7 +2,7 @@
 
 ## Deployed Site
 
-View the deployed site [here](https://gameseek2110.herokuapp.com/)!
+View the deployed site [here](https://game-seek.vercel.app/)!
 
 ## Table of Contents   
 
@@ -25,7 +25,7 @@ GameSeek is a discount gaming pc store app. Built to make everyday gamers or cas
 - Create a multi-page UX using Router V5
 - Implement Cypress end to end testing
 - Build a functional and class component application
-- Deploy to Heroku
+- Deploy to Vercel
 - Applied SASS package for styling
 - Better understanding on drilling props
 
